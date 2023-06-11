@@ -1,3 +1,11 @@
+## git 的印象
+
+1. 远程仓库 remote, 默认名称为 origin, 可以自定义为其他的。
+2. 本地仓库
+3. commit 确认的更改，包含文件的删除，文件的增加，文件的修改（一整个文件）
+4. 文本修改
+5. stage, staging
+
 ## 常用命令
 
 commit 多个或一个文件的修改集合。
@@ -6,25 +14,28 @@ commit 多个或一个文件的修改集合。
 
 编辑器修改 -> stage -> 本地仓库 -> 远端仓库。
 
-### git fetch 
+### git fetch
 
 用于获取远端的信息，比如 分支信息。
 
-### git pull 
+### git pull
 
 用于拉取代码，当远端修改过相同的行，可能会出现冲突。
 
-### git push 
+### git push
 
 用于推送代码，当远端出现分叉，一定会出现冲突。
 
-### git rebase 
+1. 把本地仓库的 commit 推送到远程仓库
+2. 如果远程仓库有
+
+### git rebase
 
 变更分支的位置。表现是一连串的 commit 被移动到了其他地方。
 
 大概率会出现冲突。
 
-有一个很好用的参数是 --onto X A B, 把 A (不包含A) 到 B 的 commit ，迁移到以 X 为基础。
+有一个很好用的参数是 --onto X A B, 把 A (不包含 A) 到 B 的 commit ，迁移到以 X 为基础。
 
 ```mermaid
 gitGraph
@@ -59,7 +70,7 @@ gitGraph
        commit id: "9"
 ```
 
-### git reset 
+### git reset
 
 有三种参数
 
@@ -68,7 +79,6 @@ gitGraph
 --mixed 会把所有改动都列出来，从新的 commit 向旧的 commit reset 时，可以保留 commit 的改动。
 
 --soft 与 --mixed 近似，但是 commit 的内容放在 stage 中。
-
 
 ### git add
 
